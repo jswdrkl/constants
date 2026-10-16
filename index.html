@@ -113,7 +113,7 @@
 
     svg.hero-svg {
       width: 100%;
-      max-width: 680px;
+      max-width: 760px;
       height: auto;
       display: block;
     }
@@ -253,6 +253,11 @@
         width: 100%;
         max-width: 360px;
       }
+      /* Specifically expanded SVG wrapper height on mobile screens for better visibility */
+      .svg-wrapper {
+        min-height: 250px;
+        padding: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -266,9 +271,9 @@
 
   <main class="container">
     
-    <!-- Reworked Bug-Free Native SMIL Animated SVG Graphic -->
+    <!-- Expanded ViewBox & Proportions for Prominent Mobile Display -->
     <div class="svg-wrapper">
-      <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 220" role="img" aria-label="‘कॉन्स्टंट’ स्थिरांक">
+      <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 280" role="img" aria-label="‘कॉन्स्टंट’ स्थिरांक">
         <defs>
           <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#0284c7" />
@@ -289,80 +294,80 @@
           </linearGradient>
         </defs>
 
-        <!-- Soft Ambient Background Shapes -->
-        <circle cx="340" cy="110" r="88" fill="url(#centerGlow)">
-          <animate attributeName="r" values="82;94;82" dur="6s" repeatCount="indefinite" />
+        <!-- Soft Ambient Background Shapes centered at (340, 140) -->
+        <circle cx="340" cy="140" r="95" fill="url(#centerGlow)">
+          <animate attributeName="r" values="88;102;88" dur="6s" repeatCount="indefinite" />
         </circle>
 
-        <!-- Concentric Circular Rings rotating cleanly around exact center (340, 110) -->
+        <!-- Concentric Circular Rings rotating cleanly around exact center (340, 140) -->
         <g>
-          <circle cx="340" cy="110" r="96" fill="none" stroke="url(#ringGrad1)" stroke-width="2" stroke-dasharray="14 10" opacity="0.75" />
-          <circle cx="340" cy="14" r="5" fill="#0284c7" />
-          <circle cx="340" cy="206" r="5" fill="#ec4899" />
-          <animateTransform attributeName="transform" type="rotate" from="0 340 110" to="360 340 110" dur="28s" repeatCount="indefinite" />
+          <circle cx="340" cy="140" r="108" fill="none" stroke="url(#ringGrad1)" stroke-width="2.2" stroke-dasharray="14 10" opacity="0.75" />
+          <circle cx="340" cy="32" r="5.5" fill="#0284c7" />
+          <circle cx="340" cy="248" r="5.5" fill="#ec4899" />
+          <animateTransform attributeName="transform" type="rotate" from="0 340 140" to="360 340 140" dur="28s" repeatCount="indefinite" />
         </g>
 
         <g>
-          <circle cx="340" cy="110" r="72" fill="none" stroke="url(#ringGrad2)" stroke-width="1.8" stroke-dasharray="8 12" opacity="0.7" />
-          <circle cx="268" cy="110" r="4.5" fill="#10b981" />
-          <circle cx="412" cy="110" r="4.5" fill="#f59e0b" />
-          <animateTransform attributeName="transform" type="rotate" from="360 340 110" to="0 340 110" dur="20s" repeatCount="indefinite" />
+          <circle cx="340" cy="140" r="80" fill="none" stroke="url(#ringGrad2)" stroke-width="1.8" stroke-dasharray="8 12" opacity="0.7" />
+          <circle cx="260" cy="140" r="5" fill="#10b981" />
+          <circle cx="420" cy="140" r="5" fill="#f59e0b" />
+          <animateTransform attributeName="transform" type="rotate" from="360 340 140" to="0 340 140" dur="20s" repeatCount="indefinite" />
         </g>
 
-        <!-- Decorative Sacred Geometry Triangle at Top Center -->
-        <polygon points="340,36 351,55 329,55" fill="#f59e0b">
+        <!-- Decorative Sacred Geometry Triangle Elements -->
+        <polygon points="340,54 353,74 327,74" fill="#f59e0b">
           <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
         </polygon>
-        <polygon points="340,184 348,170 332,170" fill="#8b5cf6" opacity="0.8">
+        <polygon points="340,226 350,210 330,210" fill="#8b5cf6" opacity="0.8">
           <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite" />
         </polygon>
 
         <!-- Top-Left Badge: Speed of Light (c) -->
         <g>
-          <rect x="28" y="28" width="130" height="32" rx="16" fill="#0284c7" />
-          <text x="93" y="49" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="14">c = 2,99,792</text>
+          <rect x="25" y="32" width="138" height="36" rx="18" fill="#0284c7" />
+          <text x="94" y="56" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">c = 2,99,792</text>
           <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4s" repeatCount="indefinite" />
         </g>
 
         <!-- Top-Right Badge: Gravity (g) -->
         <g>
-          <rect x="536" y="28" width="116" height="32" rx="16" fill="#e11d48" />
-          <text x="594" y="49" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="14">g = 9.8 m/s²</text>
+          <rect x="515" y="32" width="140" height="36" rx="18" fill="#e11d48" />
+          <text x="585" y="56" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">g = 9.8 m/s²</text>
           <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="4.5s" repeatCount="indefinite" />
         </g>
 
         <!-- Bottom-Left Badge: Pi (π) -->
         <g>
-          <rect x="38" y="158" width="110" height="32" rx="16" fill="#059669" />
-          <text x="93" y="179" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="14">π = 3.142...</text>
+          <rect x="30" y="212" width="128" height="36" rx="18" fill="#059669" />
+          <text x="94" y="236" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">π = 3.142...</text>
           <animateTransform attributeName="transform" type="translate" values="0,0; 0,5; 0,0" dur="3.8s" repeatCount="indefinite" />
         </g>
 
         <!-- Bottom-Right Badge: Constant Symbol (⟁) -->
         <g>
-          <rect x="546" y="158" width="96" height="32" rx="16" fill="#d97706" />
-          <text x="594" y="179" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15">⟁ = स्थिर</text>
+          <rect x="525" y="212" width="125" height="36" rx="18" fill="#d97706" />
+          <text x="587" y="236" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">⟁ = स्थिर</text>
           <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="4.2s" repeatCount="indefinite" />
         </g>
 
         <!-- Sparkle Accents -->
-        <circle cx="205" cy="60" r="3.5" fill="#ec4899">
+        <circle cx="195" cy="70" r="4" fill="#ec4899">
           <animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" repeatCount="indefinite" />
         </circle>
-        <circle cx="475" cy="60" r="3.5" fill="#0ea5e9">
+        <circle cx="485" cy="70" r="4" fill="#0ea5e9">
           <animate attributeName="opacity" values="1;0.2;1" dur="2.8s" repeatCount="indefinite" />
         </circle>
-        <circle cx="205" cy="160" r="3.5" fill="#10b981">
+        <circle cx="195" cy="210" r="4" fill="#10b981">
           <animate attributeName="opacity" values="0.3;1;0.3" dur="3.2s" repeatCount="indefinite" />
         </circle>
-        <circle cx="475" cy="160" r="3.5" fill="#f59e0b">
+        <circle cx="485" cy="210" r="4" fill="#f59e0b">
           <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite" />
         </circle>
 
         <!-- Center Pill Backing & Unbolded Title Text -->
-        <rect x="185" y="78" width="310" height="64" rx="32" fill="var(--card-bg)" stroke="url(#ringGrad1)" stroke-width="2" />
+        <rect x="175" y="104" width="330" height="72" rx="36" fill="var(--card-bg)" stroke="url(#ringGrad1)" stroke-width="2.2" />
         
-        <text x="340" y="121" text-anchor="middle" font-size="32" fill="var(--svg-title-color)" font-weight="normal" font-family="'IBM Plex Sans Devanagari', sans-serif">
+        <text x="340" y="149" text-anchor="middle" font-size="34" fill="var(--svg-title-color)" font-weight="normal" font-family="'IBM Plex Sans Devanagari', sans-serif">
           ‘कॉन्स्टंट’ स्थिरांक
         </text>
       </svg>
@@ -388,7 +393,7 @@
       <div class="symbol-divider">⟁⟁⟁</div>
 
       <div class="highlight-box">
-        प्रकाशाचा वेग २,९९,७९२ किलोमीटर/सेकंद, गुरुत्वीय बल ९.८ मीटर/सेकंद^२ किंवा π = ३.१४२... ही ‘मापे’ इतकीच का? हे कुतूहल जागृत असले तरी आकडेमोड करताना ते ‘कॉन्स्टंट्स’ तसेच घेतले जातात.
+        प्रकाशाचा वेग २,९९,७९२ किलोमीटर/सेकंद, गुरुत्वीय बल ९.८ मीटर/सेकंद^२ किंवा π=३.१४२... ही ‘मापे’ इतकीच का? हे कुतूहल जागृत असले तरी आकडेमोड करताना ते ‘कॉन्स्टंट्स’ तसेच घेतले जातात.
       </div>
 
       <div class="symbol-divider">⟁⟁⟁</div>
@@ -406,7 +411,7 @@
       </p>
 
       <p>
-        रोजचे ‘प्रॉब्लेम्स’ सोडवताना ते किचकट होऊ नयेत म्हणून त्यांची सूत्रबद्ध मांडणी करून उत्तरे शोधणे योग्यच आहे; पण तसे करताना जर वेगवेगळे ‘मूलभूत वर्तणूक स्थिरांक’ मान्य केले तर विविध प्रकारचे साधे, चौकोनी आणि महिरपी ‘कंस’, असंख्य शून्ये आणि ‘डेसिमल प्लेसेस’, वेगवेगळे ‘स्क्वेअर्स’, ‘क्यूब्ज’, त्यांची ‘रूटस’ व अगणित ‘डेरीव्हेटिव्ज’ निर्माण होणे टळेल आणि ‘कॅलक्युलेशन्स’ सोपी होतील. त्यामुळे मग मानसिक स्वास्थ्याच्या मार्गावरची वाटचाल ‘ग्रेटफुली कॉन्स्टंट’ राहून आपल्याला आपल्याच आतल्या कृतज्ञ स्थिरांकांची अनुभूती येईल बहुदा.
+        रोजचे ‘प्रॉब्लेम्स’ सोडवताना ते किचकट होऊ नयेत म्हणून त्यांची सूत्रबद्ध मांडणी करून उत्तरे शोधणे योग्यच आहे; पण तसे करताना जर वेगवेगळे ‘मूलभूत वर्तणूक स्थिरांक’ मान्य केले तर विविध प्रकारचे साधे, चौकोनी आणि महिरपी ‘कंस’, असंख्य शून्ये आणि ‘डेसिमल प्लेसेस’, वेगवेग वेगवेगळे ‘स्क्वेअर्स’, ‘क्यूब्ज’, त्यांची ‘रूटस’ व अगणित ‘डेरीव्हेटिव्ज’ निर्माण होणे टळेल आणि ‘कॅलक्युलेशन्स’ सोपी होतील. त्यामुळे मग मानसिक स्वास्थ्याच्या मार्गावरची वाटचाल ‘ग्रेटफुली कॉन्स्टंट’ राहून आपल्याला आपल्याच आतल्या कृतज्ञ स्थिरांकांची अनुभूती येईल बहुदा.
       </p>
 
       <div class="symbol-divider">⟁⟁⟁</div>
@@ -434,7 +439,7 @@
     const rootElement = document.documentElement;
 
     themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = rootElement.getAttribute('data-theme');
+      const currentTheme = rootElement.getAttribute('data-view-theme') || rootElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       rootElement.setAttribute('data-theme', newTheme);
     });
@@ -474,7 +479,7 @@
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(window.location.href)
           .then(() => showNotification('लिंक क्लिपबोर्डवर कॉपी झाली!'))
-          .catch(() => showNotification('शेअर करणे शक्य झाले नाही.'));
+          .catch(() => showNotification('शेअर करणे शक्य झाले नाही।'));
       } else {
         const tempInput = document.createElement('input');
         tempInput.value = window.location.href;
