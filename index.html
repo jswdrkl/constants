@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@400;500&family=Ubuntu:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@400;500;600&family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -25,7 +25,7 @@
       --toast-text: #ffffff;
       --svg-banner-bg: #f8fafc;
       --svg-banner-border: #e2e8f0;
-      --svg-title-color: #1e293b;
+      --heading-color: #1e293b;
     }
 
     [data-theme="dark"] {
@@ -43,7 +43,7 @@
       --toast-text: #121316;
       --svg-banner-bg: #16181d;
       --svg-banner-border: #2d323e;
-      --svg-title-color: #f8fafc;
+      --heading-color: #f8fafc;
     }
 
     * {
@@ -99,23 +99,36 @@
       transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
+    /* Clean separated title heading above the SVG graphic */
+    .document-heading {
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: normal;
+      color: var(--heading-color);
+      margin-bottom: 1.5rem;
+      font-family: 'IBM Plex Sans Devanagari', 'IBM Plex Sans', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
     .svg-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 2.5rem;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
       background-color: var(--svg-banner-bg);
       border: 1px solid var(--svg-banner-border);
+      padding: 1.2rem;
     }
 
     svg.hero-svg {
       width: 100%;
-      max-width: 760px;
+      max-width: 620px;
       height: auto;
       display: block;
+      overflow: visible;
     }
 
     .body-content {
@@ -246,17 +259,15 @@
         padding: 2rem 1.4rem;
         border-radius: 12px;
       }
+      .document-heading {
+        font-size: 1.85rem;
+      }
       .body-content {
         font-size: 1.175rem;
       }
       .action-btn {
         width: 100%;
         max-width: 360px;
-      }
-      /* Specifically expanded SVG wrapper height on mobile screens for better visibility */
-      .svg-wrapper {
-        min-height: 250px;
-        padding: 0.5rem;
       }
     }
   </style>
@@ -271,105 +282,66 @@
 
   <main class="container">
     
-    <!-- Expanded ViewBox & Proportions for Prominent Mobile Display -->
+    <!-- Title placed cleanly above the SVG graphic -->
+    <h1 class="document-heading">‘कॉन्स्टंट’ स्थिरांक</h1>
+
+    <!-- Redesigned Animated SVG Graphic with spacious layout and large mobile-friendly badges -->
     <div class="svg-wrapper">
-      <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 280" role="img" aria-label="‘कॉन्स्टंट’ स्थिरांक">
+      <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 320" role="img" aria-label="‘कॉन्स्टंट’ स्थिरांक आकृती">
         <defs>
-          <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#0284c7" />
             <stop offset="50%" stop-color="#8b5cf6" />
             <stop offset="100%" stop-color="#ec4899" />
           </linearGradient>
 
-          <linearGradient id="ringGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#10b981" />
-            <stop offset="50%" stop-color="#f59e0b" />
-            <stop offset="100%" stop-color="#3b82f6" />
-          </linearGradient>
-
-          <linearGradient id="centerGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.18" />
-            <stop offset="50%" stop-color="#ec4899" stop-opacity="0.18" />
-            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.18" />
-          </linearGradient>
+          <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.18"/>
+          </filter>
         </defs>
 
-        <!-- Soft Ambient Background Shapes centered at (340, 140) -->
-        <circle cx="340" cy="140" r="95" fill="url(#centerGlow)">
-          <animate attributeName="r" values="88;102;88" dur="6s" repeatCount="indefinite" />
+        <!-- Ambient Pulsing Central Core -->
+        <circle cx="270" cy="160" r="75" fill="url(#orbitGrad)" opacity="0.12">
+          <animate attributeName="r" values="70;85;70" dur="5s" repeatCount="indefinite" />
         </circle>
 
-        <!-- Concentric Circular Rings rotating cleanly around exact center (340, 140) -->
+        <!-- Rotating Orbit Ring -->
         <g>
-          <circle cx="340" cy="140" r="108" fill="none" stroke="url(#ringGrad1)" stroke-width="2.2" stroke-dasharray="14 10" opacity="0.75" />
-          <circle cx="340" cy="32" r="5.5" fill="#0284c7" />
-          <circle cx="340" cy="248" r="5.5" fill="#ec4899" />
-          <animateTransform attributeName="transform" type="rotate" from="0 340 140" to="360 340 140" dur="28s" repeatCount="indefinite" />
+          <ellipse cx="270" cy="160" rx="220" ry="95" fill="none" stroke="url(#orbitGrad)" stroke-width="2.5" stroke-dasharray="10 8" opacity="0.65" />
+          <animateTransform attributeName="transform" type="rotate" from="0 270 160" to="360 270 160" dur="30s" repeatCount="indefinite" />
         </g>
 
-        <g>
-          <circle cx="340" cy="140" r="80" fill="none" stroke="url(#ringGrad2)" stroke-width="1.8" stroke-dasharray="8 12" opacity="0.7" />
-          <circle cx="260" cy="140" r="5" fill="#10b981" />
-          <circle cx="420" cy="140" r="5" fill="#f59e0b" />
-          <animateTransform attributeName="transform" type="rotate" from="360 340 140" to="0 340 140" dur="20s" repeatCount="indefinite" />
+        <!-- Central Constant Symbol & Pulse Ring -->
+        <circle cx="270" cy="160" r="48" fill="var(--card-bg)" stroke="url(#orbitGrad)" stroke-width="3" filter="url(#cardShadow)" />
+        <text x="270" y="173" text-anchor="middle" font-size="38" fill="#e11d48" font-family="'Ubuntu', sans-serif">⟁</text>
+
+        <!-- Floating Badge 1: Speed of Light (Top Left) -->
+        <g filter="url(#cardShadow)">
+          <rect x="25" y="30" width="180" height="54" rx="27" fill="#0284c7" />
+          <text x="115" y="64" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="20" font-weight="500">c = 2,99,792</text>
+          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="3.8s" repeatCount="indefinite" />
         </g>
 
-        <!-- Decorative Sacred Geometry Triangle Elements -->
-        <polygon points="340,54 353,74 327,74" fill="#f59e0b">
-          <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
-        </polygon>
-        <polygon points="340,226 350,210 330,210" fill="#8b5cf6" opacity="0.8">
-          <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite" />
-        </polygon>
-
-        <!-- Top-Left Badge: Speed of Light (c) -->
-        <g>
-          <rect x="25" y="32" width="138" height="36" rx="18" fill="#0284c7" />
-          <text x="94" y="56" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">c = 2,99,792</text>
-          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4s" repeatCount="indefinite" />
+        <!-- Floating Badge 2: Gravity (Top Right) -->
+        <g filter="url(#cardShadow)">
+          <rect x="335" y="30" width="180" height="54" rx="27" fill="#e11d48" />
+          <text x="425" y="64" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="20" font-weight="500">g = 9.8 m/s²</text>
+          <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="4.2s" repeatCount="indefinite" />
         </g>
 
-        <!-- Top-Right Badge: Gravity (g) -->
-        <g>
-          <rect x="515" y="32" width="140" height="36" rx="18" fill="#e11d48" />
-          <text x="585" y="56" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">g = 9.8 m/s²</text>
+        <!-- Floating Badge 3: Pi (Bottom Left) -->
+        <g filter="url(#cardShadow)">
+          <rect x="25" y="236" width="180" height="54" rx="27" fill="#059669" />
+          <text x="115" y="270" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="20" font-weight="500">π = 3.142</text>
           <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="4.5s" repeatCount="indefinite" />
         </g>
 
-        <!-- Bottom-Left Badge: Pi (π) -->
-        <g>
-          <rect x="30" y="212" width="128" height="36" rx="18" fill="#059669" />
-          <text x="94" y="236" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">π = 3.142...</text>
-          <animateTransform attributeName="transform" type="translate" values="0,0; 0,5; 0,0" dur="3.8s" repeatCount="indefinite" />
+        <!-- Floating Badge 4: Stability Constant (Bottom Right) -->
+        <g filter="url(#cardShadow)">
+          <rect x="335" y="236" width="180" height="54" rx="27" fill="#d97706" />
+          <text x="425" y="270" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="20" font-weight="500">अतर्क्य स्थिरांक</text>
+          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4s" repeatCount="indefinite" />
         </g>
-
-        <!-- Bottom-Right Badge: Constant Symbol (⟁) -->
-        <g>
-          <rect x="525" y="212" width="125" height="36" rx="18" fill="#d97706" />
-          <text x="587" y="236" text-anchor="middle" fill="#ffffff" font-family="'Ubuntu', sans-serif" font-size="15" font-weight="500">⟁ = स्थिर</text>
-          <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="4.2s" repeatCount="indefinite" />
-        </g>
-
-        <!-- Sparkle Accents -->
-        <circle cx="195" cy="70" r="4" fill="#ec4899">
-          <animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="485" cy="70" r="4" fill="#0ea5e9">
-          <animate attributeName="opacity" values="1;0.2;1" dur="2.8s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="195" cy="210" r="4" fill="#10b981">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="3.2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="485" cy="210" r="4" fill="#f59e0b">
-          <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite" />
-        </circle>
-
-        <!-- Center Pill Backing & Unbolded Title Text -->
-        <rect x="175" y="104" width="330" height="72" rx="36" fill="var(--card-bg)" stroke="url(#ringGrad1)" stroke-width="2.2" />
-        
-        <text x="340" y="149" text-anchor="middle" font-size="34" fill="var(--svg-title-color)" font-weight="normal" font-family="'IBM Plex Sans Devanagari', sans-serif">
-          ‘कॉन्स्टंट’ स्थिरांक
-        </text>
       </svg>
     </div>
 
@@ -411,7 +383,7 @@
       </p>
 
       <p>
-        रोजचे ‘प्रॉब्लेम्स’ सोडवताना ते किचकट होऊ नयेत म्हणून त्यांची सूत्रबद्ध मांडणी करून उत्तरे शोधणे योग्यच आहे; पण तसे करताना जर वेगवेगळे ‘मूलभूत वर्तणूक स्थिरांक’ मान्य केले तर विविध प्रकारचे साधे, चौकोनी आणि महिरपी ‘कंस’, असंख्य शून्ये आणि ‘डेसिमल प्लेसेस’, वेगवेग वेगवेगळे ‘स्क्वेअर्स’, ‘क्यूब्ज’, त्यांची ‘रूटस’ व अगणित ‘डेरीव्हेटिव्ज’ निर्माण होणे टळेल आणि ‘कॅलक्युलेशन्स’ सोपी होतील. त्यामुळे मग मानसिक स्वास्थ्याच्या मार्गावरची वाटचाल ‘ग्रेटफुली कॉन्स्टंट’ राहून आपल्याला आपल्याच आतल्या कृतज्ञ स्थिरांकांची अनुभूती येईल बहुदा.
+        रोजचे ‘प्रॉब्लेम्स’ सोडवताना ते किचकट होऊ नयेत म्हणून त्यांची सूत्रबद्ध मांडणी करून उत्तरे शोधणे योग्यच आहे; पण तसे करताना जर वेगवेगळे ‘मूलभूत वर्तणूक स्थिरांक’ मान्य केले तर विविध प्रकारचे साधे, चौकोनी आणि महिरपी ‘कंस’, असंख्य शून्ये आणि ‘डेसिमल प्लेसेस’, वेगवेगळे ‘स्क्वेअर्स’, ‘क्यूब्ज’, त्यांची ‘रूटस’ व अगणित ‘डेरीव्हेटिव्ज’ निर्माण होणे टळेल आणि ‘कॅलक्युलेशन्स’ सोपी होतील. त्यामुळे मग मानसिक स्वास्थ्याच्या मार्गावरची वाटचाल ‘ग्रेटफुली कॉन्स्टंट’ राहून आपल्याला आपल्याच आतल्या कृतज्ञ स्थिरांकांची अनुभूती येईल बहुदा.
       </p>
 
       <div class="symbol-divider">⟁⟁⟁</div>
@@ -439,7 +411,7 @@
     const rootElement = document.documentElement;
 
     themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = rootElement.getAttribute('data-view-theme') || rootElement.getAttribute('data-theme');
+      const currentTheme = rootElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       rootElement.setAttribute('data-theme', newTheme);
     });
@@ -479,7 +451,7 @@
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(window.location.href)
           .then(() => showNotification('लिंक क्लिपबोर्डवर कॉपी झाली!'))
-          .catch(() => showNotification('शेअर करणे शक्य झाले नाही।'));
+          .catch(() => showNotification('शेअर करणे शक्य झाले नाही.'));
       } else {
         const tempInput = document.createElement('input');
         tempInput.value = window.location.href;
